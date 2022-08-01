@@ -7,7 +7,9 @@
 <div class="container">
 
 <!-- ============================ COMPONENT 1 ================================= -->
-
+{% if not cart_items %}
+	<h2> shopping cart is empty </h2>
+{% else %}
 <div class="row">
 	<aside class="col-lg-9">
 <div class="card">
@@ -27,7 +29,7 @@
 		<figure class="itemside align-items-center">
 			<div class="aside"><img src="{{ ci.product.image.url }}" class="img-sm"></div>
 			<figcaption class="info">
-				<a href="#" class="title text-dark">{{ ci.product.product_name }}</a>
+				<a href="{{ ci.product.get_url }}" class="title text-dark">{{ ci.product.product_name }}</a>
 				<p class="text-muted small">Matrix: 25 Mpx <br> Brand: Canon</p>
 			</figcaption>
 		</figure>
@@ -92,7 +94,7 @@
 
 </div> <!-- row.// -->
 <!-- ============================ COMPONENT 1 END .// ================================= -->
-
+{% endif %}
 </div> <!-- container .//  -->
 </section>
 <!-- ========================= SECTION CONTENT END// ========================= -->
