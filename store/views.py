@@ -30,3 +30,4 @@ def product_details(request, category_slug, product_slug):
         raise e
     context = {'single_product': single_product}
     return render(request, 'store/product_details.html', context=context)
+
